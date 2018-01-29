@@ -1,0 +1,16 @@
+// OUPUT=1 FOR ODD 0 FOR EVEN
+	   LXI H,4000
+	   MOV A,M
+	   MVI B,00
+	   MVI C,02
+
+ZONE:	   SUB C
+	   JC TEST
+	   JZ TYPE
+	   JNZ ZONE
+
+TEST:	   INR B
+
+TYPE:	   MOV A,B
+	   STA 5000
+	   RST 1

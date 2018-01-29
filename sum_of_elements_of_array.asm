@@ -1,0 +1,10 @@
+LDA 20F0
+MOV B,A
+LXI H,20F1
+MVI A,00H
+zone : ADD M
+	INX H
+	DCR B
+	JNZ zone
+	STA 20FFH
+	RST 1
